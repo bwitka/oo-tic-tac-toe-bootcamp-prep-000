@@ -80,8 +80,8 @@ class TicTacToe
     @board.all? { |element| element != " " }
   end
 
-  def draw?(board)
-    if full?(board) && !won?(board)
+  def draw?
+    if full?(@board) && !won?(@board)
       return true 
     else
     # elsif (!won?(@board) && !full?(@board)) || won?(@board)
@@ -89,25 +89,25 @@ class TicTacToe
     end
   end
 
-  def over?(board)
-    if won?(board) || draw?(board) || full?(board)
+  def over?
+    if won?(@board) || draw?(@board) || full?(@board)
       return true 
     end
   end
 
-  def winner(board)
-    if won?(board)
-      return board[won?(board)[0]] # return first element of winning trio.
+  def winner
+    if won?(@board)
+      return @board[won?(@board)[0]] # return first element of winning trio.
     end
   end
 
   def play
-    until over?(@board) 
+    until over?
       turn(@board)
     end 
-    if won?(@board) 
+    if won? 
       puts "Congratulations #{winner(@board)}!" 
-    elsif draw?(@board)
+    elsif draw?
       puts "Cat's Game!"
     end 
   end
