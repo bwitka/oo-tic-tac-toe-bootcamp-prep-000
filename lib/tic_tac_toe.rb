@@ -82,30 +82,14 @@ class TicTacToe
     turn_count(board).even? ? "X" : "O"
   end
   
-end
-
-
-
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-
-
-
-
-
-
-
-
-
-
-def won?(board) 
-  WIN_COMBINATIONS.each do |win_combination| 
-    if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X" || board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
+  def won?(board) 
+    WIN_COMBINATIONS.each do |win_combination| 
+      if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X" || board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
       return win_combination # return winning combo.
+      end 
     end 
-  end 
     return false # return false if there is no win combo present in board.
-end
+  end
 
 def full?(board)
   board.all? { |element| element != " " }
@@ -142,3 +126,20 @@ def play(board)
     puts "Cat's Game!"
   end 
 end
+  
+end
+
+
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+
+
+
+
+
+
+
+
+
+
