@@ -91,47 +91,44 @@ class TicTacToe
     return false # return false if there is no win combo present in board.
   end
 
-def full?(board)
-  board.all? { |element| element != " " }
-end
-
-def draw?(board)
-  if full?(board) && !won?(board)
-    return true 
-  else
-  # elsif (!won?(board) && !full?(board)) || won?(board)
-    return false 
+  def full?(board)
+    board.all? { |element| element != " " }
   end
-end
 
-def over?(board)
-  if won?(board) || draw?(board) || full?(board)
-    return true 
+  def draw?(board)
+    if full?(board) && !won?(board)
+      return true 
+    else
+    # elsif (!won?(board) && !full?(board)) || won?(board)
+      return false 
+    end
   end
-end
 
-def winner(board)
-   if won?(board)
+  def over?(board)
+    if won?(board) || draw?(board) || full?(board)
+      return true 
+    end
+  end
+
+  def winner(board)
+    if won?(board)
       return board[won?(board)[0]] # return first element of winning trio.
-   end
-end
+    end
+  end
 
-def play(board)
-  until over?(board) 
-    turn(board)
-  end 
-  if won?(board) 
-    puts "Congratulations #{winner(board)}!" 
-  elsif draw?(board)
-    puts "Cat's Game!"
-  end 
-end
+  def play(board)
+    until over?(board) 
+      turn(board)
+    end 
+    if won?(board) 
+      puts "Congratulations #{winner(board)}!" 
+    elsif draw?(board)
+      puts "Cat's Game!"
+    end 
+  end
   
 end
 
-
-
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 
 
