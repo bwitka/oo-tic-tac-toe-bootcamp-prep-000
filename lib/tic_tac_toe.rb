@@ -76,8 +76,8 @@ class TicTacToe
     return false # return false if there is no win combo present in board.
   end
 
-  def full?(board)
-    board.all? { |element| element != " " }
+  def full?
+    @board.all? { |element| element != " " }
   end
 
   def draw?(board)
