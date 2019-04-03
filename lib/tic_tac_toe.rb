@@ -84,7 +84,6 @@ class TicTacToe
     if full? && !won?
       return true 
     else
-    # elsif (!won?(@board) && !full?(@board)) || won?(@board)
       return false 
     end
   end
