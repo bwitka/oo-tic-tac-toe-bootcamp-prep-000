@@ -67,20 +67,6 @@ class TicTacToe
     turn_count % 2 == 0 ? "X" : "O"
   end
   
-  # def turn_count(board)
-  #   counter = 0 
-  #   board.each do |element|
-  #     if element == "X" || element == "O"
-  #       counter += 1 
-  #     end
-  #   end
-  #   return counter
-  # end
-
-  # def current_player(board)
-  #   turn_count(board).even? ? "X" : "O"
-  # end
-  
   def won?(board) 
     WIN_COMBINATIONS.each do |win_combination| 
       if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X" || board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
