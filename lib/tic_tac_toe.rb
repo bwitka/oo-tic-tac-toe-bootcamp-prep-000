@@ -97,7 +97,7 @@ class TicTacToe
 
   def winner
     if won?
-      return @board[won?(@board)[0]] # return first element of winning trio.
+      return @board[won?[0]] # return first element of winning trio.
     end
   end
 
