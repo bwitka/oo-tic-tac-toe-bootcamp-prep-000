@@ -28,7 +28,17 @@ class TicTacToe
     return @board[converted_input]
   end
   
-  
+  def move(array, index, value)
+    array[index] = value
+  end
+
+  def position_taken?(array, index_number)
+    if array[index_number] == " " || array[index_number] == "" || array[index_number] == nil
+      false
+    else
+      true
+    end
+  end
   
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
@@ -47,17 +57,7 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 
 
-def move(array, index, value)
-  array[index] = value
-end
 
-def position_taken?(array, index_number)
-  if array[index_number] == " " || array[index_number] == "" || array[index_number] == nil
-    false
-  else
-    true
-  end
-end
 
 def valid_move?(board, index)
   if position_taken?(board, index) == false && index.between?(0,8)
